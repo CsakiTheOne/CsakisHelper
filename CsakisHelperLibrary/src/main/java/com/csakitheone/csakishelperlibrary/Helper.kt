@@ -1,6 +1,7 @@
 package com.csakitheone.csakishelperlibrary
 
 import android.content.res.Resources.getSystem
+import android.text.SpannableStringBuilder
 import android.text.TextUtils
 import java.io.BufferedReader
 import java.io.IOException
@@ -11,8 +12,13 @@ class Helper {
         /** Converts a *px* value to *dp*. */
         val Int.asDp: Int get() = (this * getSystem().displayMetrics.density).toInt()
 
+        /** Converts a *String* to a *SpannableStringBuilder*. */
+        fun String.toEditable(): SpannableStringBuilder {
+            return SpannableStringBuilder(this)
+        }
+
         /** Checks if the running device has a MIUI based system. */
-        fun isMiUi(): Boolean {
+        fun isMiui(): Boolean {
             return !TextUtils.isEmpty(getSystemProperty("ro.miui.ui.version.name"))
         }
 
