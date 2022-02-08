@@ -8,8 +8,10 @@ import java.io.InputStreamReader
 
 class Helper {
     companion object {
+        /** Converts a *px* value to *dp*. */
         val Int.asDp: Int get() = (this * getSystem().displayMetrics.density).toInt()
 
+        /** Checks if the running device has a MIUI based system. */
         fun isMiUi(): Boolean {
             return !TextUtils.isEmpty(getSystemProperty("ro.miui.ui.version.name"))
         }
