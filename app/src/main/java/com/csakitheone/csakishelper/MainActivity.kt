@@ -11,6 +11,7 @@ import com.csakitheone.csakishelperlibrary.Dialogs
 import com.csakitheone.csakishelperlibrary.Helper
 import com.csakitheone.csakishelperlibrary.Helper.Companion.asDp
 import com.csakitheone.csakishelperlibrary.Helper.Companion.toEditable
+import com.csakitheone.csakishelperlibrary.MimeType
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        MimeType.GENERIC
     }
 
     fun onBtnDialogMessageIsMiuiClick(view: View) {
