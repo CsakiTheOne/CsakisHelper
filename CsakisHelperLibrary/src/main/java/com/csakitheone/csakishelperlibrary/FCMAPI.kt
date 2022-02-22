@@ -21,7 +21,7 @@ class FCMAPI(private val firebaseProjectId: String, oauthToken: String) {
         val jsonObjectRequest = object: JsonObjectRequest(Method.POST, api, outerData, { }, { }) {
             override fun getHeaders(): MutableMap<String, String> {
                 return mutableMapOf(
-                    "Authorization" to "key=$token",
+                    "Authorization" to token,
                     "Content-Type" to "application/json"
                 )
             }
@@ -46,7 +46,7 @@ class FCMAPI(private val firebaseProjectId: String, oauthToken: String) {
         val jsonObjectRequest = object: JsonObjectRequest(Method.POST, api, outerData, { }, { }) {
             override fun getHeaders(): MutableMap<String, String> {
                 return mutableMapOf(
-                    "Authorization" to "key=$token",
+                    "Authorization" to token,
                     "Content-Type" to "application/json"
                 )
             }
